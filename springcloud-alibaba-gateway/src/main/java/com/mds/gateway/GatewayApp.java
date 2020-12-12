@@ -11,5 +11,6 @@ public class GatewayApp {
         SpringApplication app = new SpringApplication(GatewayApp.class);
         app.addListeners();
         app.run(args);
+        System.out.println("hello world");
     }
 }
