@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mds.cloud.alibaba</groupId>
+        <artifactId>springcloud</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>springcloud-alibaba-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <name>springcloud-alibaba-dependencies</name>
+    <description>springcloud阿里巴巴技术栈</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <docker.image.prefix>owenwangwen</docker.image.prefix>
+        <docker.host>http://59.110.164.254:5555</docker.host>
+        <!--cloud版本-->
+        <spring-cloud-dependencies.version>Greenwich.SR5</spring-cloud-dependencies.version>
+        <!--alibaba cloud版本-->
+        <spring-cloud-alibaba-dependencies.version>2.2.3.RELEASE</spring-cloud-alibaba-dependencies.version>
+    </properties>
+
+    <dependencyManagement>
+
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-dependencies</artifactId>
+                    <version>${spring-cloud-dependencies.version}</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+                <!--阿里巴巴微服务依赖-->
+                <dependency>
+                    <groupId>com.alibaba.cloud</groupId>
+                    <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                    <version>${spring-cloud-alibaba-dependencies.version}</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+        <!--其他微服务依赖-->
+    </dependencyManagement>
+    <dependencies>
+        <!--nacos 服务的发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,22 @@
+# 服务端口配置
+server:
+  port: 9200
+
+# 项目健康监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+#
+spring:
+  application:
+    name: server-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 注册中心
